@@ -34,12 +34,12 @@ app.get('/', (req, res) => {//Home page called sends this message
   res.send('Welcome to DataRepresentation & Querying')//Sends message
 })
 
-app.delete('/api/movies/:id'),(req,res)=>{
+app.delete('/api/movies/:id',(req,res)=>{//Listens to delete on this
   console.log("Delete movies: "+req.params.id);
-  MovieModel.findByIdAndDelete(req.params.id),(err,data)=>{//Finds movie with this id and deletes
+  MovieModel.findByIdAndDelete(req.params.id,(err,data)=>{//Finds movie with this id and deletes
   res.send(data);
-  }
-}
+  })
+})
 
 app.get('/api/movies', (req, res, next) => {//Gets data from database
   MovieModel.find(function (err, data) {

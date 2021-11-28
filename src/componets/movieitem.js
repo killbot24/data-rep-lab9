@@ -37,6 +37,7 @@ export class MovieItem extends React.Component {//Returns below text when called
             </div>
             //Creates a card for movie
             //Sets info as title,img,year
+            //Has button to delete movie by id
         );
     }
 }
